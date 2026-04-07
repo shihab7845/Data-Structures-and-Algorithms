@@ -56,3 +56,27 @@ rotate 3 steps to the right: [5,6,7,1,2,3,4]
 Link:https://leetcode.com/problems/rotate-array/description/
 
 */
+
+/*
+Optimal solution :
+  int n = nums.size();
+       k = k % n;
+
+       for(int i=0;i<(n-k);i++){
+        nums.push_back(nums[i]);
+       }
+       nums.erase(nums.begin(),nums.begin()+(n-k));
+
+Explaination:
+
+1) 1 2 3 4 5 6 7
+after 3 step array will look like this : 5 6 7 1 2 3 4
+
+2) add 0 --> (n-k) at the end
+1 2 3 4 5 6 7 [1 2 3 4]
+
+3) Erase the part 0 --> (n-k) at the first
+*) [1 2 3 4] 5 6 7 1 2 3 4
+*) 5 6 7 1 2 3 4
+
+*/
